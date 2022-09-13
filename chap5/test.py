@@ -27,9 +27,10 @@ df = (
     .load(read_file_location)
 )
 
-df2 = df.select(lower(col("ORIGIN_COUNTRY_NAME")))
+# df2 = df.select(lower(col("ORIGIN_COUNTRY_NAME")))
 
-df2.explain()
+# df2.explain()
 
-df.select(regexp_extract(col("ORIGIN_COUNTRY_NAME"), "(United|test)", 0)).show()
+# df.select(regexp_extract(col("ORIGIN_COUNTRY_NAME"), "(United|test)", 0)).show()
 df.select(regexp_extract(col("ORIGIN_COUNTRY_NAME"), "(United|test)", 1)).show()
+df.select(coalesce(col("ORIGIN_COUNTRY_NAME"), col("DEST_COUNTRY_NAME"))).show()
