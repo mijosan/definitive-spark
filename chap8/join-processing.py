@@ -5,6 +5,10 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.sql.window import Window
 
+# sparkSession 생성
+# sparkSession으로 SparkContext에 접근 가능 (SparkContext + SQLContext)
+# 모든 스파크 코드는 RDD 명령으로 컴파일
+# 스파크 코드는 트랜스포메이션과 액션으로 구성
 spark = SparkSession.builder.appName("join-processing").getOrCreate()
 
 ## load dataset
