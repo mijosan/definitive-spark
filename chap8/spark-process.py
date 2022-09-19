@@ -23,6 +23,7 @@ step4 = step3.selectExpr("sum(id)")
 
 step4.collect()  # 결과는 2,500,000,000,000
 
+os.system("pause")
 
 # collect 액션으로 하나의 스파크 잡이 완료되는 것을 확인
 # 보통 액션 하나당 하나의 스파크 잡이 생성되며 액션은 항상 같은 결과를 반환
