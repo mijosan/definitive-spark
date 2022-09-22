@@ -18,7 +18,6 @@ read_file_location = (
     .selectExpr("instr(Description, 'GLASS') >= 1 as is_glass")
     .groupBy("is_glass")
     .count()
-    .collect()
 )
 
 os.system("pause")
