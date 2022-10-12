@@ -75,5 +75,5 @@ print(a.count(99))
 a.extend([1, 4, 5])  # a = a + [1, 4, 5]
 print(a)
 
-a.append([1, 5, 7])  #
+a.append([5])  # append(x)는 리스트의 맨 마지막에 x를 추가하는 함수이다.
 print(a)
