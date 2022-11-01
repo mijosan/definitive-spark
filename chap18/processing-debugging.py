@@ -4,6 +4,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.sql.window import Window
 
+# 이거 자체가 드라이버 프로세스 인듯
 spark = SparkSession.builder.appName("debugging-processing").getOrCreate()
 
 read_file_location = (
