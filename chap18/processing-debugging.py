@@ -11,14 +11,15 @@ read_file_location = (
     "C:/Users/mobigen/definitive-spark/data/retail-data/all/online-retail-dataset.csv"
 )
 
-(
+
+df = (
     spark.read.format("csv")
     .option("header", "true")
     .csv(read_file_location)
     .repartition(2)
-    .selectExpr("instr(Description, 'GLASS') >= 1 as is_glass")
-    .groupBy("is_glass")
-    .count()
+    .select("instr(Description, 'GLASS') >= 1 as is_glass")
 )
+
+df.toLocalIterator()("numberONe", expr())
 
 os.system("pause")
